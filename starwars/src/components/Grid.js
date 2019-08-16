@@ -12,6 +12,8 @@ const GridExampleDividedNumber = () => {
       })
       .then(response => {
           console.log(response.data.results);
+          const characters = response.data.results;
+          setCharacters(characters);
         
       });
   }, []);
