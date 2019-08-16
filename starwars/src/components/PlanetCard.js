@@ -1,9 +1,10 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { Card, Icon, Image } from 'semantic-ui-react'
 
 const PlanetCard = (props) => {
-
+    const [card2, setCardClass2] = useState('card-see');
 return (
+    <button className={card2}  onMouseOver={() => setCardClass2("card-see")} onMouseLeave= {()=> setCardClass2("card-none")}>
   <Card className="card">
     
     <Card.Content  key={props.id}>
@@ -17,6 +18,7 @@ return (
     </Card.Content>
     
   </Card>
+  </button>
 )
 }
 export default PlanetCard

@@ -1,11 +1,14 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Card, Icon, Image } from 'semantic-ui-react'
 
-const CardExampleCard = (props) => {
 
+
+const CardExampleCard = (props) => {
+const [card, setCardClass] = useState('card-see');
 return (
-  <Card>
-    
+   <button className={card}  onMouseOver={() => setCardClass("card-see")} onMouseLeave= {()=> setCardClass("card-none")}>
+  <Card >
+     
     <Card.Content  key={props.id}>
       <Card.Header>{props.name}</Card.Header>
       <Card.Meta>
@@ -17,6 +20,7 @@ return (
     </Card.Content>
     
   </Card>
+  </button>
 )
 }
 export default CardExampleCard

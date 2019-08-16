@@ -9,7 +9,9 @@ const GridExampleDividedNumber = () => {
  const [characters, setCharacters] =useState([]);
  const [planets, setPlanets] = useState([]);
  const [starships, setStarships] = useState([]);
- const [Name, setClassName] = useState('column')
+ const [Name1, setClassName1] = useState('card-none')
+ const [Name2, setClassName2] = useState('card-none')
+ const [Name3, setClassName3] = useState('card-none')
  useEffect(() => {
     axios
       .get(`https://swapi.co/api/people/`, {
@@ -52,19 +54,24 @@ return (
    
   <Grid  className= "Grid" columns={3} divided>
     <Grid.Row>
-      <Grid.Column className={Name}>
+    <button className={Name1}  onMouseOver={() => setClassName1("card-see")} onMouseLeave= {()=> setClassName1("card-none")}>
+      <Grid.Column  >
       {characters.map(character => {
               return (
+
                   <CardExampleCard key={character.id}
                   name={character.name}
                   films={character.height}
                   homeworld={character.mass} />
+                  
               )
           })}
        
       </Grid.Column>
-  
-      <Grid.Column className = {Name}>
+  </button>
+  <button className={Name2}  onMouseOver={() => setClassName2("card-see")} onMouseLeave= {()=> setClassName2("card-none")}>
+      <Grid.Column  ></Grid.Column>
+      <Grid.Column >
         {planets.map(character=> {
               return (
                   <PlanetCard key={character.id}
@@ -74,7 +81,9 @@ return (
               )
           })}
       </Grid.Column>
-      <Grid.Column className = {Name}>
+      </button>
+      <button className={Name3}  onMouseOver={() => setClassName3("card-see")} onMouseLeave= {()=> setClassName3("card-none")}>
+      <Grid.Column >
       {starships.map(character => {
               return (
                   <StarshipCard key={character.id}
@@ -85,6 +94,7 @@ return (
           })}
        
       </Grid.Column>
+      </button>
     </Grid.Row>
     
 
