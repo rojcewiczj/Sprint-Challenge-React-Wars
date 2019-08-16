@@ -9,6 +9,7 @@ const GridExampleDividedNumber = () => {
  const [characters, setCharacters] =useState([]);
  const [planets, setPlanets] = useState([]);
  const [starships, setStarships] = useState([]);
+ const [Name, setClassName] = useState('column')
  useEffect(() => {
     axios
       .get(`https://swapi.co/api/people/`, {
@@ -51,7 +52,7 @@ return (
    
   <Grid  className= "Grid" columns={3} divided>
     <Grid.Row>
-      <Grid.Column className="Column">
+      <Grid.Column className={Name}>
       {characters.map(character => {
               return (
                   <CardExampleCard key={character.id}
@@ -63,7 +64,7 @@ return (
        
       </Grid.Column>
   
-      <Grid.Column className = "Column">
+      <Grid.Column className = {Name}>
         {planets.map(character=> {
               return (
                   <PlanetCard key={character.id}
@@ -73,7 +74,7 @@ return (
               )
           })}
       </Grid.Column>
-      <Grid.Column className = "Column">
+      <Grid.Column className = {Name}>
       {starships.map(character => {
               return (
                   <StarshipCard key={character.id}

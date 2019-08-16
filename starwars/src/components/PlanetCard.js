@@ -4,7 +4,7 @@ import { Card, Icon, Image } from 'semantic-ui-react'
 const PlanetCard = (props) => {
 
 return (
-  <Card>
+  <Card className="card">
     
     <Card.Content  key={props.id}>
       <Card.Header>{props.name}</Card.Header>
