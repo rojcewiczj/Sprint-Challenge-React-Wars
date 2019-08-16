@@ -1,11 +1,19 @@
 import React from 'react'
 import { Grid, Image } from 'semantic-ui-react'
+import CardExampleCard from "./Card"
+const GridExampleDividedNumber = () => {
+    
+ const [characters, setCharacters] =useState([]);
 
-const GridExampleDividedNumber = () => (
+
+
+
+return (
+   
   <Grid columns={3} divided>
     <Grid.Row>
       <Grid.Column>
-        
+        <CardExampleCard />
       </Grid.Column>
       <Grid.Column>
        
@@ -28,5 +36,6 @@ const GridExampleDividedNumber = () => (
     </Grid.Row>
   </Grid>
 )
+}
 
 export default GridExampleDividedNumber
