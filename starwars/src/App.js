@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import 'semantic-ui-css/semantic.min.css';
 import { Grid, Form, Input, TextArea, Button, Select } from "semantic-ui-react";
 import GridExampleDividedNumber from './components/Grid'
 const App = () => {

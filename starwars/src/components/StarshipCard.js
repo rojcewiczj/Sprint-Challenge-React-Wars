@@ -1,7 +1,7 @@
 import React from 'react'
 import { Card, Icon, Image } from 'semantic-ui-react'
 
-const CardExampleCard = (props) => {
+const StarshipCard = (props) => {
 
 return (
   <Card>
@@ -9,14 +9,14 @@ return (
     <Card.Content  key={props.id}>
       <Card.Header>{props.name}</Card.Header>
       <Card.Meta>
-        <span className='date'> Height: {props.films}</span>
+        <span className='date'> Model: {props.films}</span>
       </Card.Meta>
       <Card.Description>
-        Mass: {props.homeworld}
+        Cost: {props.homeworld}
       </Card.Description>
     </Card.Content>
     
   </Card>
 )
 }
-export default CardExampleCard
+export default StarshipCard
